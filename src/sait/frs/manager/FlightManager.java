@@ -26,8 +26,11 @@ public class FlightManager {
 	 * @throws FileNotFoundException 
 	 */
 	public FlightManager() throws FileNotFoundException {
-		this.populateFlights();
+		this.airports = new ArrayList<String> ();
 		this.populateAirports();
+		
+		this.flights = new ArrayList<Flight> ();
+		this.populateFlights();
 	}
 
 	/**
@@ -58,23 +61,36 @@ public class FlightManager {
 	}
 	
 	private void populateFlights() throws FileNotFoundException {
-		Scanner data = new Scanner(new File("res/flights.csv"));
+		Scanner data = new Scanner(new FileInputStream("res/flights.csv"), "UTF-8");
 		String line = "";
 		while (data.hasNextLine()) {
 			line = data.nextLine();
 			String columns[] = line.split(",");
-//			this.flights.add(columns[0]);
+			if ( columns[0].matches("OA-\\d{4}") || columns[0].matches("CA-\\d{4}") || columns[0].matches("TB-\\d{4}") || columns[0].matches("VA-\\d{4}") ) {
+				this.flights.add(new Flight(
+					(columns[0].substring(0,2) == "OA") ? "Otto Airlines" : (columns[0].substring(0,2) == "CA") ? "Conned Air" : (columns[0].substring(0,2) == "TB") ? "Try a Bus Airways" : "Vertical Airways",
+					columns[0],
+					Double.parseDouble(columns[6]),
+					columns[1],
+					Integer.parseInt(columns[5]),
+					columns[4],
+					columns[2],
+					columns[3]
+				));
+			}
 		}
+		data.close();
 	}
 	
 	private void populateAirports() throws FileNotFoundException {
-		Scanner data = new Scanner(new File("res/airport.csv"));
+		Scanner data = new Scanner(new FileInputStream("res/airports.csv"), "UTF-8");
 		String line = "";
 		while (data.hasNextLine()) {
 			line = data.nextLine();
 			String columns[] = line.split(",");
 			this.airports.add(columns[0]);
 		}
+		data.close();
 	}
 	
 	

@@ -6,7 +6,6 @@ public class Flight {
 	 * 
 	 */
 	private String airlineName;
-
 	private String code;
 	private double costPerSeat;
 	private String from;
