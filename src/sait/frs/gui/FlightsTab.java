@@ -52,7 +52,6 @@ public class FlightsTab extends TabBase
 	private JTextField tDay;
 	private JTextField tTime;
 	private JTextField tCost;
-	private JTextField tSeats;
 	private JTextField tName;
 	private JTextField tCitizenship;
 	
@@ -147,7 +146,7 @@ public class FlightsTab extends TabBase
 		panel.add(title, BorderLayout.NORTH);
 		
 		JPanel GridLayout = new JPanel();
-		GridLayout.setLayout(new GridLayout(8,2));
+		GridLayout.setLayout(new GridLayout(7,2));
 		
 		JPanel centerPanel = new JPanel();
 		centerPanel.setLayout(new FlowLayout());
@@ -178,12 +177,6 @@ public class FlightsTab extends TabBase
 		tTime.setEditable(false);
 		GridLayout.add(lTime);
 		GridLayout.add(tTime);
-		
-		JLabel lSeats = new JLabel("Seats: ",SwingConstants.RIGHT);
-		tSeats = new JTextField(10);
-		tSeats.setEditable(false);
-		GridLayout.add(lSeats);
-		GridLayout.add(tSeats);
 		
 		JLabel lCost = new JLabel("Cost: ",SwingConstants.RIGHT);
 		tCost = new JTextField(10);
@@ -331,7 +324,6 @@ public class FlightsTab extends TabBase
 				tDay.setText(f.getWeekday());
 				tTime.setText(f.getTime());
 				tCost.setText(f.getCostPerSeat()+"");
-				tSeats.setText(f.getSeats()+"");
 			} catch ( Exception e ) {}
 			
 		}

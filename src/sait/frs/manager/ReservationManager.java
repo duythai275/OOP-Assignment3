@@ -18,6 +18,10 @@ public class ReservationManager {
 		populate();
 	}
 	
+	public ArrayList<Reservation> getReservations() {
+		return this.reservations;
+	}
+	
 	public Reservation makeReservation (Flight flight, String name, String citizenship) throws NullFlightException, InvalidNameException, InvalidCitizenshipException, NoMoreSeatsException {
 		if ( flight == null ) {
 			throw new NullFlightException();
@@ -43,12 +47,14 @@ public class ReservationManager {
 	}
 	
 	public ArrayList<Reservation> findReservations (String code, String airline, String name) {
-		ArrayList<Reservation> filteredReservations = this.reservations;
-		for ( Reservation r : filteredReservations ) {
-			if ( ( code != "" && !r.getCode().equals(code) ) || 
-				 ( airline != "" && !r.getAirline().equals(airline) ) || 
-				 ( name != "" && !r.getName().equals(name) ) 
-			   ) filteredReservations.remove(r);
+		ArrayList<Reservation> filteredReservations = new ArrayList<Reservation> ();
+		for ( Reservation r : this.reservations ) {
+			if ( (code.equals("") || r.getCode().equals(code))
+					&& (airline.equals("") || r.getAirline().equals(airline))
+					&& (name.equals("") || r.getName().equals(name))
+					&& (!code.equals("") || !airline.equals("") || !name.equals(""))
+				) 
+				filteredReservations.add(r);
 		}
 		return filteredReservations;
 	}
@@ -84,7 +90,7 @@ public class ReservationManager {
 	}	
 	
 	private String generateResevationCode (Flight flight) {
-		String generatedCode = ( ( flight.isDometic() ) ? "D" : "L" ) + new Random().nextInt(9000) + 1000;
+		String generatedCode = ( ( flight.isDometic() ) ? "D" : "L" ) + (new Random().nextInt(9000) + 1000);
 		boolean flag = true;
 		while ( flag ) {
 			flag = false;
