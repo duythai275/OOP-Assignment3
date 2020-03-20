@@ -25,10 +25,8 @@ public class Flight {
 	 * @param to
 	 * @param weekday
 	 */
-	public Flight(String airlineName, String code, double costPerSeat, String from, int seats, String time, String to,
+	public Flight(String code, double costPerSeat, String from, int seats, String time, String to,
 			String weekday) {
-		super();
-		this.airlineName = airlineName;
 		this.code = code;
 		this.costPerSeat = costPerSeat;
 		this.from = from;
@@ -36,6 +34,7 @@ public class Flight {
 		this.time = time;
 		this.to = to;
 		this.weekday = weekday;
+		parseCode(code);
 	}
 	/**
 	 * @return the airline
@@ -85,19 +84,24 @@ public class Flight {
 	public String getWeekday() {
 		return weekday;
 	}
-	/**
-	 * @param seats the seats to set
-	 */
-	public void setSeats(int seats) {
-		this.seats = seats;
-	}
+	
+//	/**
+//	 * @param seats the seats to set
+//	 */
+//	public void setSeats(int seats) {
+//		this.seats = seats;
+//	}
 	
 	public boolean isDometic() {
-		return true;
+		if ( this.from.charAt(0) == 'Y' && this.to.charAt(0) == 'Y' ) return true;
+		else return false;
 	}
 	
-	private String parseCode() {
-		return "";
+	private void parseCode(String code) {
+		if ( code == "OA" ) this.airlineName = "Otto Airlines";
+		else if ( code == "CA" ) this.airlineName = "Conned Air";
+		else if ( code == "TB") this.airlineName = "Try a Bus Airways";
+		else this.airlineName = "Vertical Airways";
 	}
 
 	@Override
