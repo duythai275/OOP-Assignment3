@@ -128,7 +128,6 @@ public class ReservationManager {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		
-			}
+	}
 
 }	
