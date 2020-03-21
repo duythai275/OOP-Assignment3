@@ -129,7 +129,6 @@ public class ReservationManager {
 			System.out.println(e.getMessage());
 		}
 		
-		
-	}
+			}
 
 }	
