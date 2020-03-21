@@ -19,7 +19,7 @@ import sait.frs.problemdomain.Flight;
  * - Make reservation component
  * 
  * @author Thai Nguyen, Kim Seulgi
- * @version March 05, 2020
+ * @version March 20, 2020
  */
 public class FlightsTab extends TabBase 
 {

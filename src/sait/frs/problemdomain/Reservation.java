@@ -2,24 +2,36 @@ package sait.frs.problemdomain;
 
 import sait.frs.exception.*;
 
+/**
+ * This program is a class for identifying "Reservation" objects
+ * 
+ * @author Thai Nguyen, Seulgi Kim
+ * @version March 20, 2020
+ */
+
 public class Reservation {
-	private boolean active;
-	private String citizenship;
-	private String code;
-	private String flightCode;
-	private String name;
-	private String airline;
-	private double cost;
+	
+	/**
+	 * Seven private instance fields
+	 */
+	private boolean active; //
+	private String citizenship; //Citizenship of reservation
+	private String code; //Code of reservation
+	private String flightCode; //Flight code of reservation
+	private String name; //Name of reservation
+	private String airline; // airline of reservation
+	private double cost; //Cost of reservation
 	
 
 	/**
-	 * @param active
-	 * @param citizenship
-	 * @param code
-	 * @param flightCode
-	 * @param name
-	 * @param airline
-	 * @param cost
+	 * The constructor for the reservation class
+	 * @param active The boolean value is The 
+	 * @param citizenship The string value is The citizenship of reservation
+	 * @param code The string value is The code of reservation
+	 * @param flightCode The string value is The flight code of reservation
+	 * @param name The string value is The name of reservation
+	 * @param airline The string value is The airline of reservation
+	 * @param cost The double value is The cost of reservation
 	 */
 	public Reservation(boolean active, String citizenship, String code, String flightCode, String name, String airline,
 			double cost) {
@@ -39,48 +51,56 @@ public class Reservation {
 		return active;
 	}
 	/**
-	 * @return the citizenship
+	 * getCitizenship method is a getter of citizenship in Reservation class
+	 * @return a value of citizenship attribute of a Reservation object
 	 */
 	public String getCitizenship() {
 		return citizenship;
 	}
 	/**
-	 * @return the code
+	 * getCode method is a getter of code in Reservation class
+	 * @return a value of code attribute of a Reservation object
 	 */
 	public String getCode() {
 		return code;
 	}
 	/**
-	 * @return the flightCode
+	 * getFlightCode method is a getter of flightCode in Reservation class
+	 * @return a value of flightCode attribute of a Reservation object
 	 */
 	public String getFlightCode() {
 		return flightCode;
 	}
 	/**
-	 * @return the name
+	 * getName method is a getter of name in Reservation class
+	 * @return a value of name attribute of a Reservation object
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * @return the airline
+	 * getCiAirline method is a getter of airline in Reservation class
+	 * @return a value of airline attribute of a Reservation object
 	 */
 	public String getAirline() {
 		return airline;
 	}
 	/**
-	 * @return the cost
+	 * getCost method is a getter of cost in Reservation class
+	 * @return a value of cost attribute of a Reservation object
 	 */
 	public double getCost() {
 		return cost;
 	}
 	/**
-	 * @param active the active to set
+	 * setActive is a setter of active attribute in Reservation class
+	 * @param active is a parameter in order to set a value for active attribute of a Reservation object
 	 */
 	public void setActive(boolean active) {
 		this.active = active;
 	}
 	/**
+	 * setCitizenship method throws exceptions when citizenship is missed
 	 * @param citizenship the citizenship to set
 	 * @throws InvalidCitizenshipException 
 	 */
@@ -91,6 +111,7 @@ public class Reservation {
 		this.citizenship = citizenship;
 	}
 	/**
+	 * 	 * setNAme method throws exceptions when name is missed
 	 * @param name the name to set
 	 * @throws InvalidNameException 
 	 */

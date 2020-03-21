@@ -19,7 +19,7 @@ import sait.frs.problemdomain.Reservation;
  * - Update reservation component
  * 
  * @author Thai Nguyen, Kim Seulgi
- * @version March 05, 2020
+ * @version March 20, 2020
  */
 public class ReservationsTab extends TabBase {
 	/**

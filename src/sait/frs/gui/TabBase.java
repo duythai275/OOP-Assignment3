@@ -6,7 +6,7 @@ import javax.swing.*;
  * Abstract class for a tab in the JFrame.
  * 
  * @author Thai Nguyen, Kim Seulgi
- * @version March 05, 2020
+ * @version March 20, 2020
  */
 public abstract class TabBase 
 {

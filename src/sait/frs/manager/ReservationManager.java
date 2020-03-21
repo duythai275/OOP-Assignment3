@@ -6,10 +6,17 @@ import java.io.*;
 import java.util.*;
 import sait.frs.problemdomain.*;
 
+/**
+ * This program make and find a reservation by code, airline, and name 
+ * @author Thai Nguyen, Seulgi Kim, 
+ * @version March 20, 2020
+ */
+
 public class ReservationManager {
 	private ArrayList<Reservation> reservations;
 
 	/**
+	 * Constructor
 	 * @param reservations
 	 * @throws IOException 
 	 */

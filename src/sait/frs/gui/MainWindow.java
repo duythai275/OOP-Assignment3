@@ -19,7 +19,7 @@ import sait.frs.manager.*;
  * 
  * 
  * @author Thai Nguyen, Kim Seulgi
- * @version March 05, 2020
+ * @version March 20, 2020
  */
 public class MainWindow extends JFrame {
 	private static final String TAB_FLIGHTS = "flights";

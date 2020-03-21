@@ -5,7 +5,12 @@ import java.io.*;
 
 import sait.frs.problemdomain.*;
 
-
+/**
+ * This program find flight by the origin and destination airport,
+ * and a day of the week the flight is departing
+ * @author Thai Nguyen, Seulgi Kim, 
+ * @version March 20, 2020
+ */
 
 public class FlightManager {
 
@@ -21,7 +26,8 @@ public class FlightManager {
 	private ArrayList<String> airports;
 	
 	/**
-	 * @param flights
+	 * Constructor
+	 * @param flights 
 	 * @param airports
 	 */
 	public FlightManager() {
