@@ -110,7 +110,6 @@ public class ReservationManager {
 	}
 
 	private void populate() {
-		
 		try {
 			RandomAccessFile raf = new RandomAccessFile ("res/reservations.dat", "rw");
 			while ( raf.getFilePointer() < raf.length() ) {

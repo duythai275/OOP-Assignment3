@@ -359,7 +359,6 @@ public class FlightsTab extends TabBase
 				}
 				rm.persist();
 			}
-			
 		}
 	}
 }
